@@ -1,8 +1,8 @@
+import { NavLinks } from './nav-links';
 import { ThemeToggle } from 'components/theme-toggle';
 import { cn, getLatestVersion } from 'lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
-import { NavLinks } from './nav-links';
 
 export async function Navbar({ className }: { className?: string }) {
   const version = await getLatestVersion();

@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { HeroEvervaultBg } from './hero-evervault-bg';
 import { HeroHighlight } from './hero-highlight';
 import { Section, SectionContainer } from 'components/layout/section';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -22,10 +22,16 @@ export function Hero() {
         </p>
 
         <div className="relative z-10 flex flex-row items-center gap-4">
-          <Link href={"#cta"} className="font-space-grotesk cursor-pointer bg-white px-8 py-3.5 text-[10px] font-bold tracking-[1px] text-black uppercase transition-colors hover:bg-white/90">
+          <Link
+            href={'#cta'}
+            className="font-space-grotesk cursor-pointer bg-white px-8 py-3.5 text-[10px] font-bold tracking-[1px] text-black uppercase transition-colors hover:bg-white/90"
+          >
             Initialize Project
           </Link>
-          <Link href={"/docs"} className="font-space-grotesk border border-white/10 px-8 py-3.5 text-[10px] font-bold tracking-[1px] text-[#e5e2e1] uppercase transition-colors hover:bg-white/5">
+          <Link
+            href={'/docs'}
+            className="font-space-grotesk border border-white/10 px-8 py-3.5 text-[10px] font-bold tracking-[1px] text-[#e5e2e1] uppercase transition-colors hover:bg-white/5"
+          >
             Read Docs
           </Link>
         </div>

@@ -1,13 +1,13 @@
 'use client';
 
 import { Section, SectionContainer } from 'components/layout/section';
-import { motion, useScroll, useMotionValueEvent, useTransform } from 'framer-motion';
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useTransform,
+} from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-
-
-
-
-
 
 const TERMINAL_STEPS = [
   <p key="1" className="mb-4 text-[#B8F600]">
@@ -263,7 +263,7 @@ export function TerminalDemo() {
                           ease: 'easeInOut',
                         }}
                       >
-                        <h2 className="text-3xl font-space-grotesk mb-4 font-bold tracking-tight text-white sm:text-4xl">
+                        <h2 className="font-space-grotesk mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                           {step.title}
                         </h2>
                         <p className="text-lg text-[#a3a3a3]">
