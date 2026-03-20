@@ -2,6 +2,7 @@ import { ThemeToggle } from 'components/theme-toggle';
 import { cn, getLatestVersion } from 'lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { NavLinks } from './nav-links';
 
 export async function Navbar({ className }: { className?: string }) {
   const version = await getLatestVersion();
@@ -23,36 +24,7 @@ export async function Navbar({ className }: { className?: string }) {
         </Link>
 
         {/* Links */}
-        <div className="hidden shrink-0 items-center gap-[32px] md:flex">
-          <div className="flex shrink-0 flex-col items-start">
-            <Link
-              href="/docs"
-              className="font-space-grotesk text-muted-foreground hover:text-foreground flex h-[16px] flex-col justify-center text-[12px] font-bold tracking-[-0.3px] uppercase transition-colors dark:text-[#a3a3a3] dark:hover:text-white"
-            >
-              Docs
-            </Link>
-          </div>
-          <div className="flex shrink-0 flex-col items-start">
-            <Link
-              href="https://github.com/frizzyondabeat/volt-fast"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-space-grotesk text-muted-foreground hover:text-foreground flex h-[16px] flex-col justify-center text-[12px] font-bold tracking-[-0.3px] uppercase transition-colors dark:text-[#a3a3a3] dark:hover:text-white"
-            >
-              GitHub
-            </Link>
-          </div>
-          <div className="flex shrink-0 flex-col items-start">
-            <Link
-              href="https://npmx.dev/package/@frizzyondabeat/volt-fast"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-space-grotesk text-muted-foreground hover:text-foreground flex h-[16px] flex-col justify-center text-[12px] font-bold tracking-[-0.3px] uppercase transition-colors dark:text-[#a3a3a3] dark:hover:text-white"
-            >
-              NPM
-            </Link>
-          </div>
-        </div>
+        <NavLinks />
 
         {/* Actions */}
         <div className="flex shrink-0 items-center gap-4 pr-[2.82px]">
