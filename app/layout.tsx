@@ -5,6 +5,14 @@ import { cn } from 'lib/utils';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 
+
+
+
+
+
+
+
+
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -49,6 +57,14 @@ export const metadata: Metadata = {
   ],
   creator: 'frizzyondabeat',
   openGraph: {
+    images: [
+      {
+        url: `/api/og`,
+        width: 1200,
+        height: 630,
+        alt: 'Athlinka OG Image',
+      },
+    ],
     type: 'website',
     locale: 'en_US',
     url: '/',
