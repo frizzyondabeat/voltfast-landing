@@ -74,6 +74,9 @@
 }
 
 @theme inline {
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --font-inter: var(--font-inter);
+    --font-space-grotesk: var(--font-space-grotesk);
     --font-mono: var(--font-mono);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -124,5 +127,15 @@
     }
   html {
     @apply font-mono;
+    }
+}
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 }
