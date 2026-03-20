@@ -13,6 +13,22 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -79,6 +95,9 @@ export const metadata: Metadata = {
     description:
       'A high-velocity toolkit designed for builders. Scaffold, lint, and deploy modern applications.',
     creator: '@frizzyondabeat',
+  },
+  verification: {
+    google: 'K4geIT8fNMI29xFGOG__MLyI_3SngOull-aBvrkiZ9Q',
   },
 };
 
