@@ -21,8 +21,49 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Voltfast - Setup, Simplified',
-  description: 'A high-velocity toolkit designed for builders.',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+  ),
+  title: {
+    default: 'Voltfast - Setup, Simplified',
+    template: '%s | Voltfast',
+  },
+  description:
+    'A high-velocity toolkit designed for builders. Scaffold, lint, and deploy modern applications.',
+  keywords: [
+    'CLI',
+    'scaffold',
+    'lint',
+    'deploy',
+    'Next.js',
+    'React',
+    'Tailwind CSS',
+    'TypeScript',
+    'Voltfast',
+  ],
+  authors: [
+    {
+      name: 'frizzyondabeat',
+      url: 'https://github.com/frizzyondabeat',
+    },
+  ],
+  creator: 'frizzyondabeat',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    title: 'Voltfast - Setup, Simplified',
+    description:
+      'A high-velocity toolkit designed for builders. Scaffold, lint, and deploy modern applications.',
+    siteName: 'Voltfast',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Voltfast - Setup, Simplified',
+    description:
+      'A high-velocity toolkit designed for builders. Scaffold, lint, and deploy modern applications.',
+    creator: '@frizzyondabeat',
+  },
 };
 
 export default function RootLayout({

@@ -4,9 +4,20 @@ import { CopyButton } from 'components/ui/copy-button';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Documentation - Voltfast',
+  title: 'Documentation',
   description:
     'The ultra-fast CLI engine designed to scaffold, lint, and deploy modern applications.',
+  openGraph: {
+    title: 'Documentation | Voltfast',
+    description:
+      'The ultra-fast CLI engine designed to scaffold, lint, and deploy modern applications.',
+    url: '/docs',
+  },
+  twitter: {
+    title: 'Documentation | Voltfast',
+    description:
+      'The ultra-fast CLI engine designed to scaffold, lint, and deploy modern applications.',
+  },
 };
 
 export default function DocsPage() {
