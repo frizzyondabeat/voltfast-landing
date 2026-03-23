@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     'Tailwind CSS',
     'TypeScript',
     'Voltfast',
+    'Voltfast CLI',
+    'Voltfast toolkit',
   ],
   authors: [
     {
