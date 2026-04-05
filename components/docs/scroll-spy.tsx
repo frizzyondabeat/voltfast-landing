@@ -1,9 +1,16 @@
 'use client';
 
+import { useActiveSection } from '@/hooks/use-active-section';
 import { motion } from 'framer-motion';
 import { cn } from 'lib/utils';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+
+
+
+
+
+
 
 export interface NavItem {
   name: string;
@@ -21,31 +28,7 @@ export function DocsSidebar({
   version,
   isToc = false,
 }: DocsSidebarProps) {
-  const [activeId, setActiveId] = useState<string>('introduction');
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -80% 0px', threshold: 0.1 }
-    );
-
-    const elements = items.map((item) => {
-      const id = item.href.split('#')[1] || 'introduction';
-      return document.getElementById(id);
-    });
-
-    elements.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [items]);
+  const { activeId, setActiveId } = useActiveSection(items);
 
   if (isToc) {
     return (
@@ -71,6 +54,7 @@ export function DocsSidebar({
                     ? 'text-[#b8f600]'
                     : 'text-[#6b7280] hover:text-[#e5e2e1]'
                 )}
+                onClick={() => setActiveId(id)}
               >
                 {isActive && (
                   <motion.div

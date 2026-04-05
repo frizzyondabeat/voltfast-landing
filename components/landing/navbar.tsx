@@ -1,8 +1,8 @@
-import { NavLinks } from './nav-links';
-import { ThemeToggle } from 'components/theme-toggle';
 import { cn, getLatestVersion } from 'lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MobileMenu } from './mobile-menu';
+import { NavLinks } from './nav-links';
 
 export async function Navbar({ className }: { className?: string }) {
   const version = await getLatestVersion();
@@ -11,7 +11,7 @@ export async function Navbar({ className }: { className?: string }) {
     <nav
       className={cn('border-border/40 border-b dark:border-white/5', className)}
     >
-      <div className="border-border/40 bg-background relative z-50 mx-auto flex w-full max-w-[1440px] items-center justify-between border-x px-8 py-4 dark:border-white/5 dark:bg-[#131313]">
+      <div className="border-border/40 bg-background relative z-50 mx-auto flex w-full max-w-[1440px] items-center justify-between border-x px-6 py-4 md:px-8 dark:border-white/5 dark:bg-[#131313]">
         {/* Logo */}
         <Link href={'/'} className="flex shrink-0 items-start gap-1">
           <Image src="/logo.svg" alt="Volt Fast Logo" width={32} height={32} />
@@ -23,12 +23,12 @@ export async function Navbar({ className }: { className?: string }) {
           </div>
         </Link>
 
-        {/* Links */}
+        {/* Desktop links */}
         <NavLinks />
 
-        {/* Actions */}
-        <div className="flex shrink-0 items-center gap-4 pr-[2.82px]">
-          {/* <ThemeToggle /> */}
+        {/* Desktop actions */}
+        <div className="hidden shrink-0 items-center gap-4 pr-[2.82px] md:flex">
+          {/* <OnlineStatus /> */}
           <div className="flex shrink-0 flex-col items-center justify-center">
             <div className="font-space-grotesk text-muted-foreground flex h-[15px] flex-col justify-center text-[10px] font-bold tracking-[1px] uppercase dark:text-[#a3a3a3]">
               v{version}
@@ -43,6 +43,9 @@ export async function Navbar({ className }: { className?: string }) {
             </div>
           </Link>
         </div>
+
+        {/* Mobile hamburger + full-screen menu */}
+        <MobileMenu version={version} />
       </div>
     </nav>
   );
