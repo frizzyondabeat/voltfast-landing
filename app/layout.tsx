@@ -1,4 +1,5 @@
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 import { LenisProvider } from 'components/providers/lenis-provider';
 import { ThemeProvider } from 'components/providers/theme-provider';
 import { cn } from 'lib/utils';
@@ -112,6 +113,7 @@ export default function RootLayout({
         >
           <LenisProvider>{children}</LenisProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
