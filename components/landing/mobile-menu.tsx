@@ -90,6 +90,9 @@ export function MobileMenu({ version }: { version: string }) {
                   alt="Volt Fast Logo"
                   width={32}
                   height={32}
+                  priority={true}
+                  loading='eager'
+                  fetchPriority='high'
                 />
                 <div className="font-space-grotesk text-foreground flex h-[32px] flex-col justify-center text-[24px] font-bold tracking-[-1.2px] dark:text-white">
                   <p className="leading-[32px]">
