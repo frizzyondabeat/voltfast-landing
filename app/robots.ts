@@ -1,19 +1,14 @@
 import { MetadataRoute } from 'next';
 
-
-
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL || 'https://voltfast.vercel.app';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_APP_URL ||
-    process.env.VERCEL_URL ||
-    'https://voltfast.vercel.app';
-
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }

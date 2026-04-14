@@ -244,7 +244,6 @@ export function TerminalDemo() {
                       activeTextIndex === index && hasReachedRight;
 
                     const isPast = index < activeTextIndex;
-                    console.log('isActive, isPast', isActive, isPast);
 
                     return (
                       <motion.div

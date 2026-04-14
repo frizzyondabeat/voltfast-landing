@@ -1,14 +1,15 @@
 import { DocsSidebar } from 'components/docs/scroll-spy';
+import { DocsToc } from 'components/docs/docs-toc';
 import { MainLayout } from 'components/layout/main-layout';
 import { getLatestVersion } from 'lib/utils';
 import { ReactNode } from 'react';
 
-const navigation = [
-  { name: 'Introduction', href: '/docs#introduction' },
-  { name: 'Quick Start', href: '/docs#quick-start' },
-  { name: 'Features', href: '/docs#features' },
-  { name: 'Supported Stacks', href: '/docs#supported-stacks' },
-  { name: 'Contributing', href: '/docs#contributing' },
+export const navigation = [
+  { name: 'Introduction', href: '/docs' },
+  { name: 'Quick Start', href: '/docs/quick-start' },
+  { name: 'Features', href: '/docs/features' },
+  { name: 'Supported Stacks', href: '/docs/supported-stacks' },
+  { name: 'Contributing', href: '/docs/contributing' },
 ];
 
 export default async function DocsLayout({
@@ -21,7 +22,7 @@ export default async function DocsLayout({
   return (
     <MainLayout>
       <div className="relative flex w-full max-w-[1440px] flex-1 items-start">
-        {/* Sidebar Navigation */}
+        {/* Left Sidebar — path-based navigation */}
         <DocsSidebar items={navigation} version={version} />
 
         {/* Main Content Area */}
@@ -29,8 +30,8 @@ export default async function DocsLayout({
           {children}
         </div>
 
-        {/* Right Sidebar - Table of Contents */}
-        <DocsSidebar items={navigation} version={version} isToc={true} />
+        {/* Right Sidebar — per-page TOC, self-managed via usePathname */}
+        <DocsToc version={version} />
       </div>
     </MainLayout>
   );

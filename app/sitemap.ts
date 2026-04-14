@@ -1,23 +1,45 @@
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_APP_URL ||
-    process.env.VERCEL_URL ||
-    'https://voltfast.vercel.app';
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL || 'https://voltfast.vercel.app';
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
+      url: BASE_URL,
+      lastModified: '2025-04-01',
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/docs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      url: `${BASE_URL}/docs`,
+      lastModified: '2025-04-01',
+      changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/docs/quick-start`,
+      lastModified: '2025-04-01',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/docs/features`,
+      lastModified: '2025-04-01',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/docs/supported-stacks`,
+      lastModified: '2025-04-01',
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/docs/contributing`,
+      lastModified: '2025-04-01',
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
   ];
 }

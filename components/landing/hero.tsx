@@ -10,6 +10,7 @@ export function Hero() {
         <HeroEvervaultBg />
 
         <h1 className="font-space-grotesk relative z-10 mb-8 text-center text-6xl leading-none font-light tracking-[-0.05em] md:text-[128px]">
+          <span className="sr-only">Voltfast CLI — Zero-Config Scaffold for Next.js &amp; React. </span>
           Setup,{' '}
           <HeroHighlight>
             <span className="font-bold">Simplified.</span>

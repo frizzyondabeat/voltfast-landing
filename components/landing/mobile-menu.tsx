@@ -21,6 +21,14 @@ const NAV_LINKS = [
   },
 ];
 
+const DOCS_NAV = [
+  { name: 'Introduction', href: '/docs' },
+  { name: 'Quick Start', href: '/docs/quick-start' },
+  { name: 'Features', href: '/docs/features' },
+  { name: 'Supported Stacks', href: '/docs/supported-stacks' },
+  { name: 'Contributing', href: '/docs/contributing' },
+];
+
 export function MobileMenu({ version }: { version: string }) {
   const [openPathname, setOpenPathname] = useState<string | null>(null);
   const pathname = usePathname();
@@ -113,7 +121,7 @@ export function MobileMenu({ version }: { version: string }) {
             </div>
 
             {/* Nav links */}
-            <nav className="flex flex-1 flex-col px-6 pt-6">
+            <nav className="flex flex-1 flex-col overflow-y-auto px-6 pt-6">
               {NAV_LINKS.map((link, i) => {
                 const isActive =
                   !link.external &&
@@ -162,6 +170,47 @@ export function MobileMenu({ version }: { version: string }) {
                   </motion.div>
                 );
               })}
+
+              {/* Docs sub-navigation — only visible when inside /docs */}
+              {pathname?.startsWith('/docs') && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.45, duration: 0.25, ease: 'easeOut' }}
+                  className="mt-4 flex flex-col gap-1"
+                >
+                  <p className="mb-2 font-mono text-[10px] font-bold tracking-[2px] text-[#4b5563] uppercase">
+                    Documentation
+                  </p>
+                  {DOCS_NAV.map((item) => {
+                    const docActive =
+                      item.href === '/docs'
+                        ? pathname === '/docs'
+                        : pathname === item.href ||
+                          pathname?.startsWith(item.href + '/');
+
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={handleClose}
+                        className={`flex items-center justify-between rounded-[8px] px-4 py-3 transition-colors ${
+                          docActive
+                            ? 'bg-[rgba(191,255,0,0.08)] font-semibold text-[#bfff00]'
+                            : 'text-[#9ca3af] hover:bg-white/5 hover:text-white'
+                        }`}
+                      >
+                        <span className="text-[15px] leading-[20px]">
+                          {item.name}
+                        </span>
+                        {docActive && (
+                          <div className="h-1.5 w-1.5 rounded-full bg-[#bfff00]" />
+                        )}
+                      </Link>
+                    );
+                  })}
+                </motion.div>
+              )}
             </nav>
 
             {/* Footer — version + CTA */}
