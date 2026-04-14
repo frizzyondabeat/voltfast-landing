@@ -1,5 +1,6 @@
 import { DocsSidebar } from 'components/docs/scroll-spy';
 import { DocsToc } from 'components/docs/docs-toc';
+import { SearchModal } from 'components/docs/search-modal';
 import { MainLayout } from 'components/layout/main-layout';
 import { getLatestVersion } from 'lib/utils';
 import { ReactNode } from 'react';
@@ -21,6 +22,7 @@ export default async function DocsLayout({
 
   return (
     <MainLayout>
+      <SearchModal />
       <div className="relative flex w-full max-w-[1440px] flex-1 items-start">
         {/* Left Sidebar — path-based navigation */}
         <DocsSidebar items={navigation} version={version} />

@@ -88,7 +88,12 @@ export function DocsToc({ version }: { version: string }) {
         })}
       </nav>
 
-      <div className="flex w-full flex-col gap-[8px] rounded-[8px] border border-[rgba(184,246,0,0.1)] bg-[rgba(184,246,0,0.05)] p-[24px]">
+      <button
+        type="button"
+        onClick={() => window.dispatchEvent(new CustomEvent('open-docs-search'))}
+        className="flex w-full flex-col gap-[8px] rounded-[8px] border border-[rgba(184,246,0,0.1)] bg-[rgba(184,246,0,0.05)] p-[24px] text-left transition-colors hover:border-[rgba(184,246,0,0.25)] hover:bg-[rgba(184,246,0,0.08)]"
+        aria-label="Open documentation search"
+      >
         <div className="font-mono text-[10px] leading-[15px] text-[#b8f600]">
           PRO TIP
         </div>
@@ -99,7 +104,7 @@ export function DocsToc({ version }: { version: string }) {
           </kbd>{' '}
           to search the documentation instantly.
         </div>
-      </div>
+      </button>
     </aside>
   );
 }
