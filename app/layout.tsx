@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL || 'https://voltfast.vercel.app';
+  process.env.NEXT_PUBLIC_APP_URL || 'https://voltfast.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),

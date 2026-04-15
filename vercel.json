@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "voltfast.vercel.app" }],
+      "destination": "https://voltfast.dev/$1",
+      "permanent": true
+    }
+  ]
+}
