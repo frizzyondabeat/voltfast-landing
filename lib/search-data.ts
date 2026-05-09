@@ -134,6 +134,96 @@ export const SEARCH_INDEX: SearchEntry[] = [
     href: '/docs/supported-stacks#sveltekit',
   },
 
+  // MCP Server
+  {
+    id: 'mcp-overview',
+    page: 'MCP Server',
+    section: 'Overview',
+    keywords:
+      'mcp model context protocol ai agent tool scaffold advisory detect plan setup automation claude trae cursor windsurf vscode',
+    href: '/docs/mcp#overview',
+  },
+  {
+    id: 'mcp-install-cc',
+    page: 'MCP Server',
+    section: 'Installation — Claude Code',
+    keywords:
+      'claude code cli mcp add scope user npx package volt-fast-mcp install register terminal',
+    href: '/docs/mcp#installation',
+  },
+  {
+    id: 'mcp-install-desktop',
+    page: 'MCP Server',
+    section: 'Installation — Claude Desktop',
+    keywords:
+      'claude desktop config json mcpServers npx package frizzyondabeat volt-fast install register',
+    href: '/docs/mcp#installation',
+  },
+  {
+    id: 'mcp-install-trae',
+    page: 'MCP Server',
+    section: 'Installation — Trae',
+    keywords:
+      'trae ide bytedance mcp server settings extensions mcpServers json config install register ai editor',
+    href: '/docs/mcp#installation',
+  },
+  {
+    id: 'mcp-install-cursor',
+    page: 'MCP Server',
+    section: 'Installation — Cursor',
+    keywords:
+      'cursor ide mcp json mcpServers .cursor/mcp.json global project config install register ai editor',
+    href: '/docs/mcp#installation',
+  },
+  {
+    id: 'mcp-install-windsurf',
+    page: 'MCP Server',
+    section: 'Installation — Windsurf',
+    keywords:
+      'windsurf codeium mcp json mcpServers mcp_config.json config install register ai editor',
+    href: '/docs/mcp#installation',
+  },
+  {
+    id: 'mcp-install-vscode',
+    page: 'MCP Server',
+    section: 'Installation — VS Code',
+    keywords:
+      'vscode visual studio code github copilot mcp servers .vscode/mcp.json type stdio install register',
+    href: '/docs/mcp#installation',
+  },
+  {
+    id: 'mcp-tool-detect',
+    page: 'MCP Server',
+    section: 'detect_project',
+    keywords:
+      'detect project framework package manager typescript nextjs vite tailwind auto-detect directory inspect',
+    href: '/docs/mcp#tools',
+  },
+  {
+    id: 'mcp-tool-plan',
+    page: 'MCP Server',
+    section: 'plan_setup',
+    keywords:
+      'plan setup eslint prettier tailwind husky commitlint shadcn config files install command advisory scaffolding',
+    href: '/docs/mcp#tools',
+  },
+  {
+    id: 'mcp-tool-test',
+    page: 'MCP Server',
+    section: 'plan_test_setup',
+    keywords:
+      'plan test setup vitest jest cypress runner config scripts package.json advisory test runner scaffold',
+    href: '/docs/mcp#tools',
+  },
+  {
+    id: 'mcp-workflow',
+    page: 'MCP Server',
+    section: 'Agent Workflow',
+    keywords:
+      'agent workflow detect plan apply write files run install command four step automation ai scaffold',
+    href: '/docs/mcp#workflow',
+  },
+
   // Contributing
   {
     id: 'contrib',

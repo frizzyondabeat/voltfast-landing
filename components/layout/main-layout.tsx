@@ -5,9 +5,10 @@ import { cn } from 'lib/utils';
 interface MainLayoutProps {
   children: React.ReactNode;
   className?: string;
+  stickyNav?: boolean;
 }
 
-export function MainLayout({ children, className }: MainLayoutProps) {
+export function MainLayout({ children, className, stickyNav }: MainLayoutProps) {
   return (
     <div
       className={cn(
@@ -15,7 +16,7 @@ export function MainLayout({ children, className }: MainLayoutProps) {
         className
       )}
     >
-      <Navbar />
+      <Navbar className={stickyNav ? 'sticky top-0 z-50' : undefined} />
       <main className="border-border/40 relative z-10 flex w-full flex-1 flex-col items-center border-b dark:border-white/5">
         {children}
       </main>

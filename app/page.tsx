@@ -3,6 +3,7 @@ import { CTA } from 'components/landing/cta';
 import { Features } from 'components/landing/features';
 import { Hero } from 'components/landing/hero';
 import { HomeClient } from 'components/landing/home-client';
+import { ScrollNavbar } from 'components/landing/scroll-navbar';
 import { ScrollReveal } from 'components/landing/scroll-reveal';
 import { TechStack } from 'components/landing/tech-stack';
 import { TerminalDemo } from 'components/landing/terminal-demo';
@@ -73,6 +74,7 @@ const faqJsonLd = {
 export default function Home() {
   return (
     <>
+      <ScrollNavbar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

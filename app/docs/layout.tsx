@@ -10,6 +10,7 @@ export const navigation = [
   { name: 'Quick Start', href: '/docs/quick-start' },
   { name: 'Features', href: '/docs/features' },
   { name: 'Supported Stacks', href: '/docs/supported-stacks' },
+  { name: 'MCP Server', href: '/docs/mcp' },
   { name: 'Contributing', href: '/docs/contributing' },
 ];
 
@@ -21,7 +22,7 @@ export default async function DocsLayout({
   const version = await getLatestVersion();
 
   return (
-    <MainLayout>
+    <MainLayout stickyNav>
       <SearchModal />
       <div className="relative flex w-full max-w-[1440px] flex-1 items-start">
         {/* Left Sidebar — path-based navigation */}

@@ -33,6 +33,12 @@ const TOC_BY_PATH: Record<string, TocItem[]> = {
     { name: 'Astro', href: '/docs/supported-stacks#astro' },
     { name: 'SvelteKit', href: '/docs/supported-stacks#sveltekit' },
   ],
+  '/docs/mcp': [
+    { name: 'Overview', href: '/docs/mcp#overview' },
+    { name: 'Installation', href: '/docs/mcp#installation' },
+    { name: 'Tools Reference', href: '/docs/mcp#tools' },
+    { name: 'Agent Workflow', href: '/docs/mcp#workflow' },
+  ],
   '/docs/contributing': [
     { name: 'Contribution Workflow', href: '/docs/contributing#contributing' },
   ],
