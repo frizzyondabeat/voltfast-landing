@@ -1,3 +1,4 @@
+import { DocsMobileNav } from 'components/docs/docs-mobile-nav';
 import { DocsSidebar } from 'components/docs/scroll-spy';
 import { DocsToc } from 'components/docs/docs-toc';
 import { SearchModal } from 'components/docs/search-modal';
@@ -24,12 +25,14 @@ export default async function DocsLayout({
   return (
     <MainLayout stickyNav>
       <SearchModal />
+      {/* Mobile-only horizontal doc nav — sticks below the navbar */}
+      <DocsMobileNav items={navigation} />
       <div className="relative flex w-full max-w-[1440px] flex-1 items-start">
-        {/* Left Sidebar — path-based navigation */}
+        {/* Left Sidebar — path-based navigation, desktop only */}
         <DocsSidebar items={navigation} version={version} />
 
         {/* Main Content Area */}
-        <div className="max-w-[1024px] flex-1 px-[24px] py-[48px] md:px-[80px]">
+        <div className="min-w-0 max-w-[1024px] flex-1 px-[20px] py-[32px] sm:px-[32px] md:px-[80px] md:py-[48px]">
           {children}
         </div>
 

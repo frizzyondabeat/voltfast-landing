@@ -26,6 +26,7 @@ const DOCS_NAV = [
   { name: 'Quick Start', href: '/docs/quick-start' },
   { name: 'Features', href: '/docs/features' },
   { name: 'Supported Stacks', href: '/docs/supported-stacks' },
+  { name: 'MCP Server', href: '/docs/mcp' },
   { name: 'Contributing', href: '/docs/contributing' },
 ];
 
@@ -80,7 +81,7 @@ export function MobileMenu({ version }: { version: string }) {
             animate={{ clipPath: 'circle(150% at 50% 50%)' }}
             exit={{ clipPath: 'circle(0% at calc(100% - 44px) 32px)' }}
             transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
-            className="bg-background fixed inset-0 z-[200] flex flex-col md:hidden dark:bg-[#131313]"
+            className="bg-background fixed inset-0 z-200 flex flex-col md:hidden dark:bg-[#131313]"
             id="mobile-menu-dialog"
             role="dialog"
             aria-modal="true"

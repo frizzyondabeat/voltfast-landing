@@ -176,7 +176,7 @@ function TerminalLine({ line }: { line: (typeof STEPS)[0]['lines'][0] }) {
 
 export default function McpPage() {
   return (
-    <div className="flex w-full flex-col items-start gap-[96px]">
+    <div className="flex w-full flex-col items-start gap-[48px] md:gap-[96px]">
 
       {/* ── Overview ───────────────────────────────────────────── */}
       <ScrollReveal>
@@ -194,7 +194,7 @@ export default function McpPage() {
               </span>
             </div>
 
-            <h1 className="font-['Space_Grotesk'] text-[48px] leading-[1.1] font-bold tracking-[-3px] text-white md:text-[60px] md:leading-[60px]">
+            <h1 className="font-['Space_Grotesk'] text-[34px] leading-[1.1] font-bold tracking-[-1.5px] text-white sm:text-[42px] md:text-[48px] md:tracking-[-3px] lg:text-[60px] lg:leading-[60px]">
               AI Agent{' '}
               <span className="text-[#b8f600]">Integration</span>
             </h1>
@@ -272,13 +272,15 @@ export default function McpPage() {
                   <div className="size-[10px] rounded-full bg-green-500/20" />
                   <span className="ml-[8px] font-mono text-[11px] text-[#4b5563]">terminal</span>
                 </div>
-                <div className="p-[24px]">
-                  <span className="font-mono text-[13px] text-[#b8f600]">$ </span>
-                  <span className="font-mono text-[13px] text-[#e5e2e1]">
-                    claude mcp add --scope user volt-fast npx{' '}
-                  </span>
-                  <span className="font-mono text-[13px] text-[#c3caac]">
-                    -- -y --package=@frizzyondabeat/volt-fast volt-fast-mcp
+                <div className="overflow-x-auto p-[24px]">
+                  <span className="inline-flex whitespace-nowrap">
+                    <span className="font-mono text-[13px] text-[#b8f600]">$ </span>
+                    <span className="font-mono text-[13px] text-[#e5e2e1]">
+                      claude mcp add --scope user volt-fast npx{' '}
+                    </span>
+                    <span className="font-mono text-[13px] text-[#c3caac]">
+                      -- -y --package=@frizzyondabeat/volt-fast volt-fast-mcp
+                    </span>
                   </span>
                 </div>
                 <div className="h-[3px] w-full bg-gradient-to-r from-[#b8f600] to-transparent" />
@@ -366,16 +368,16 @@ export default function McpPage() {
                     {row.note && (
                       <span className="text-[11px] text-[#6b7280]">{row.note}</span>
                     )}
-                    <span className="font-mono text-[10px] text-[#6b7280]">
+                    <span className="break-all font-mono text-[10px] text-[#6b7280]">
                       <span className="text-[#4b5563]">macOS </span>
                       {row.mac}
                     </span>
-                    <span className="font-mono text-[10px] text-[#6b7280]">
+                    <span className="break-all font-mono text-[10px] text-[#6b7280]">
                       <span className="text-[#4b5563]">Windows </span>
                       {row.win}
                     </span>
                     {row.extra && (
-                      <span className="font-mono text-[10px] text-[#4b5563]">{row.extra}</span>
+                      <span className="break-all font-mono text-[10px] text-[#4b5563]">{row.extra}</span>
                     )}
                   </div>
                 ))}
@@ -474,7 +476,7 @@ export default function McpPage() {
               <div
                 key={tool.id}
                 id={tool.id}
-                className="flex w-full flex-col gap-[24px] rounded-[16px] border border-white/5 bg-[#1c1b1b] p-[32px]"
+                className="flex w-full flex-col gap-[24px] rounded-[16px] border border-white/5 bg-[#1c1b1b] p-[20px] md:p-[32px]"
               >
                 {/* Tool header */}
                 <div className="flex flex-wrap items-center gap-[12px]">
